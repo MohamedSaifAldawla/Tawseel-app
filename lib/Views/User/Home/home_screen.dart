@@ -4,15 +4,15 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/Globals/globals.dart';
 import 'package:tawseel/Util/size_config.dart';
-import 'package:tawseel/Views/Home/cat_screen.dart';
-import 'package:tawseel/Views/Home/product_screen.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Models/cart.dart';
-import '../../Widgets/cat_item.dart';
-import '../../Widgets/intro.dart';
-import '../../Widgets/product_item.dart';
-import '../../Widgets/promo_widget.dart';
-import '../../Widgets/sections.title.dart';
+import 'package:tawseel/Views/User/Home/cat_screen.dart';
+import 'package:tawseel/Views/User/Home/product_screen.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Models/cart.dart';
+import '../../../Widgets/cat_item.dart';
+import '../../../Widgets/intro.dart';
+import '../../../Widgets/product_item.dart';
+import '../../../Widgets/promo_widget.dart';
+import '../../../Widgets/sections.title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);

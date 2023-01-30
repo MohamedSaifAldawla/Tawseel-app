@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../Models/cat.dart';
+import '../../Models/cat.dart';
 
 class CatController extends GetxController {
   List<Categories> cat = [

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:tawseel/Globals/globals.dart';
 import 'package:tawseel/Util/size_config.dart';
 import 'package:tawseel/Util/theme.dart';
-import 'package:tawseel/Views/Home/cart_screen.dart';
+import 'package:tawseel/Views/User/Home/cart_screen.dart';
 
 class RootScreen extends StatelessWidget {
   const RootScreen({Key? key}) : super(key: key);

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:tawseel/Controllers/cart_controller.dart';
-import 'package:tawseel/Controllers/cat_controller.dart';
-import 'package:tawseel/Controllers/product_controller.dart';
-import 'package:tawseel/Controllers/store_controller.dart';
-
-import '../Controllers/main_controller.dart';
+import '../Controllers/User/cart_controller.dart';
+import '../Controllers/User/cat_controller.dart';
+import '../Controllers/User/main_controller.dart';
+import '../Controllers/User/product_controller.dart';
+import '../Controllers/User/store_controller.dart';
 import '../Util/size_config.dart';
 import '../Util/theme.dart';
 
@@ -16,6 +15,7 @@ final catController = Get.find<CatController>();
 final productController = Get.find<ProductController>();
 final storeController = Get.find<StoreController>();
 final cartController = Get.find<CartController>();
+
 //-------------------------- Variables -------------------//
 String logo = "assets/images/logo.png";
 int delivery = 2000;

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import '../../Widgets/intro.dart';
-import '../../Widgets/social_item.dart';
+import '../../../Widgets/intro.dart';
+import '../../../Widgets/social_item.dart';
 
 class MaintenanceScreen extends StatelessWidget {
   const MaintenanceScreen({Key? key}) : super(key: key);

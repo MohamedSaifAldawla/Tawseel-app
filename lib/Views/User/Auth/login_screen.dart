@@ -2,41 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:tawseel/Views/User/Auth/resetpass_screen.dart';
+import 'package:tawseel/Views/User/Home/stores_screen.dart';
 import 'package:tawseel/Widgets/primary_button.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Globals/globals.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
-import '../../Widgets/form_error.dart';
-import '../../Widgets/inputField.dart';
-import '../../Widgets/intro.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Globals/globals.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
+import '../../../Widgets/form_error.dart';
+import '../../../Widgets/inputField.dart';
+import '../../../Widgets/intro.dart';
 
 // ignore: must_be_immutable
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _phoneController = TextEditingController();
-  final TextEditingController _usernameController = TextEditingController();
-  final _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
 
-  String? username;
+  final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   String? phone;
   String? password;
-  String? confirm;
 
   bool remember = false;
-
   bool _hidePassword = true;
   final List<String> errors = [];
-  Map<String, dynamic> _registerData = {};
+  final Map<String, dynamic> _loginData = {};
 
   void addError({required String error}) {
     if (!errors.contains(error)) {
@@ -56,6 +53,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   void initState() {
+    loadUserEmailPassword();
+    // Future.delayed(Duration(seconds: 1), () async {
+    //   Login();
+    // });
     super.initState();
   }
 
@@ -65,7 +66,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         // title: Text("Login".tr),
-        backgroundColor: kPrimary3Color,
+        backgroundColor: Colors.transparent,
       ),
       body: Stack(
         children: [
@@ -80,15 +81,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
           SingleChildScrollView(
             child: Container(
               padding: EdgeInsets.only(
-                  right: horizontalPadding,
-                  left: horizontalPadding,
-                  top: 110,
-                  bottom: 20),
+                right: horizontalPadding,
+                left: horizontalPadding,
+                top: 110,
+                bottom: 20,
+              ),
               child: Center(
                 child: Form(
                   key: _formKey,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       FadeAnimation(
                         1.1,
@@ -128,7 +129,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: BodyText(
-                                text: "Register2".tr,
+                                text: "Login2".tr,
                                 fontSize: getProportionateScreenWidth(32),
                                 color: kPrimaryColor,
                                 weight: FontWeight.bold,
@@ -138,46 +139,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                       Gap(getProportionateScreenWidth(5)),
-                      FadeAnimation2(
-                        1.5,
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: BodyText(
-                            text: "Enter the data below".tr,
-                            textAlign: TextAlign.start,
-                            maxLines: 2,
+                      Row(
+                        children: [
+                          FadeAnimation2(
+                            1.5,
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child:
+                                  BodyText(text: "Log in to your account".tr),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
                       Gap(getProportionateScreenWidth(30)),
-                      FadeAnimation(
-                        1.6,
-                        InputField(
-                          controller: _usernameController,
-                          hint: "User name".tr,
-                          icon: "assets/icons/Person.svg",
-                          obscureText: false,
-                          keyboardType: TextInputType.text,
-                          onSaved: (newValue) => username = newValue,
-                          onChanged: (value) {
-                            if (value == null || value.isNotEmpty) {
-                              removeError(
-                                  error: "Please Enter your user name".tr);
-                            }
-                            if (value == null || value.isEmpty) {
-                              addError(error: "Please Enter your user name".tr);
-                            }
-                          },
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              addError(error: "Please Enter your user name".tr);
-                              return "";
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      Gap(getProportionateScreenWidth(20)),
                       FadeAnimation(
                         1.6,
                         InputField(
@@ -216,35 +191,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                         ),
                       ),
-                      Gap(getProportionateScreenWidth(3)),
-                      FadeAnimation(
-                        1.6,
-                        InputField(
-                          controller: _usernameController,
-                          hint: "Address".tr,
-                          icon: "assets/icons/Location.svg",
-                          obscureText: false,
-                          keyboardType: TextInputType.text,
-                          onSaved: (newValue) => username = newValue,
-                          onChanged: (value) {
-                            if (value == null || value.isNotEmpty) {
-                              removeError(
-                                  error: "Please Enter your address".tr);
-                            }
-                            if (value == null || value.isEmpty) {
-                              addError(error: "Please Enter your address".tr);
-                            }
-                          },
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              addError(error: "Please Enter your address".tr);
-                              return "";
-                            }
-                            return null;
-                          },
-                        ),
-                      ),
-                      Gap(getProportionateScreenWidth(20)),
+                      Gap(getProportionateScreenWidth(5)),
                       FadeAnimation(
                         1.6,
                         SuffixInputField(
@@ -282,79 +229,76 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                         ),
                       ),
-                      Gap(getProportionateScreenWidth(20)),
+                      Gap(getProportionateScreenWidth(10)),
                       FadeAnimation(
-                        1.6,
-                        SuffixInputField(
-                          controller: _confirmPasswordController,
-                          hint: "Re-Enter password".tr,
-                          icon: "assets/icons/Lock.svg",
-                          suffixIcon: "assets/icons/Eye.svg",
-                          obscureText: true,
-                          keyboardType: TextInputType.text,
-                          onSaved: (newValue) => confirm = newValue,
-                          onChanged: (value) {
-                            if (value == null || value.isNotEmpty) {
-                              removeError(
-                                  error: "Please Re-Enter your password".tr);
-                            }
-                            if (value!.length >= passLength) {
-                              removeError(
-                                  error:
-                                      "Confirmation Password is too short".tr);
-                            }
-                            if (_passwordController.value ==
-                                _confirmPasswordController.value) {
-                              removeError(error: "Password did not matched".tr);
-                            }
-                            if (value.isEmpty) {
-                              addError(
-                                  error: "Please Re-Enter your password".tr);
-                            }
-                            if (value.length < 8) {
-                              addError(
-                                  error:
-                                      "Confirmation Password is too short".tr);
-                            }
-                            if (_passwordController.value !=
-                                _confirmPasswordController.value) {
-                              addError(error: "Password did not matched".tr);
-                            }
-                          },
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              addError(
-                                  error: "Please Re-Enter your password".tr);
-                              return "";
-                            } else if (value.length < passLength) {
-                              addError(
-                                  error:
-                                      "Confirmation Password is too short".tr);
-                              return "";
-                            } else if (_passwordController.value !=
-                                _confirmPasswordController.value) {
-                              addError(error: "Password did not matched".tr);
-                              return "";
-                            }
-                            return null;
-                          },
+                        1.8,
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: remember,
+                              activeColor: kPrimaryColor,
+                              onChanged: (value) {
+                                setState(
+                                  () {
+                                    remember = value!;
+                                    if (remember == true) {
+                                      GetStorage().write('remember', remember);
+                                      GetStorage().write(
+                                          'phone', _phoneController.text);
+                                      GetStorage().write(
+                                          'password', _passwordController.text);
+
+                                      debugPrint("$remember");
+                                      debugPrint(GetStorage().read("phone"));
+                                      debugPrint(GetStorage().read("password"));
+                                    } else if (remember == false) {
+                                      GetStorage().remove("phone");
+                                      GetStorage().remove("password");
+                                      GetStorage().remove("remember");
+                                      debugPrint("$remember");
+                                    }
+                                  },
+                                );
+                              },
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5),
+                              child: BodyText(
+                                text: "Remember me".tr,
+                              ),
+                            ),
+                            const Spacer(),
+                            GestureDetector(
+                              onTap: (() => Get.to(
+                                  () => const ResetPassScreen(),
+                                  transition: Transition.fadeIn)),
+                              child: BodyText(
+                                text: "Forgot Password".tr,
+                                color: kPrimaryColor,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       FadeAnimation(
-                        1.7,
+                        1.8,
                         Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 12, vertical: 5),
                           child: FormError(errors: errors),
                         ),
                       ),
-                      Gap(getProportionateScreenWidth(20)),
+                      Gap(getProportionateScreenWidth(10)),
                       FadeAnimation(
-                        1.8,
+                        1.9,
                         PrimaryButton(
-                          text: "Register2".tr,
+                          text: "Login2".tr,
                           press: (() {
-                            if (_formKey.currentState!.validate()) {}
+                            Get.to(() => const StoresScreen(),
+                                transition: Transition.fadeIn);
+                            // Get.to(() => const RootScreen(),
+                            //     transition: Transition.fadeIn);
+                            // if (_formKey.currentState!.validate()) {}
                           }),
                         ),
                       ),
@@ -367,5 +311,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ],
       ),
     );
+  }
+
+  void loadUserEmailPassword() async {
+    try {
+      if (await GetStorage().read("remember")) {
+        debugPrint("${GetStorage().read("remember")}");
+        _phoneController.text = await GetStorage().read("phone");
+        _passwordController.text = await GetStorage().read("password");
+        setState(() {
+          remember = true;
+        });
+      }
+    } catch (e) {
+      debugPrint("$e");
+    }
   }
 }

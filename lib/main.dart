@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:tawseel/Controllers/main_controller.dart';
+import 'Controllers/User/main_controller.dart';
 import 'Globals/globals.dart';
 import 'Services/api.dart';
 import 'Util/routes.dart';

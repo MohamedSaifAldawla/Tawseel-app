@@ -9,9 +9,9 @@ import 'package:tawseel/Util/size_config.dart';
 import 'package:tawseel/Util/theme.dart';
 import 'package:tawseel/Widgets/quantity_item.dart';
 
-import '../../Animations/FadeAnimation.dart';
-import '../../Widgets/intro.dart';
-import '../../Widgets/primary_button.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Widgets/intro.dart';
+import '../../../Widgets/primary_button.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);

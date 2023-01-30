@@ -1,18 +1,18 @@
 import 'package:get/get.dart';
-import 'package:tawseel/Views/Auth/login_screen.dart';
-import 'package:tawseel/Views/Auth/onBoarding_screen.dart';
-import 'package:tawseel/Views/Auth/otp_screen.dart';
-import 'package:tawseel/Views/Auth/register_screen.dart';
-import 'package:tawseel/Views/Auth/resetpass_screen.dart';
-import 'package:tawseel/Views/Auth/welcome_screen.dart';
-import 'package:tawseel/Views/Home/cart_screen.dart';
-import 'package:tawseel/Views/Home/cat_screen.dart';
-import 'package:tawseel/Views/Home/product_screen.dart';
-import 'package:tawseel/Views/Home/root_screen.dart';
-import 'package:tawseel/Views/Home/stores_screen.dart';
+import 'package:tawseel/Views/User/Auth/login_screen.dart';
+import 'package:tawseel/Views/User/Auth/onBoarding_screen.dart';
+import 'package:tawseel/Views/User/Auth/otp_screen.dart';
+import 'package:tawseel/Views/User/Auth/register_screen.dart';
+import 'package:tawseel/Views/User/Auth/resetpass_screen.dart';
+import 'package:tawseel/Views/User/Auth/welcome_screen.dart';
+import 'package:tawseel/Views/User/Home/cart_screen.dart';
+import 'package:tawseel/Views/User/Home/cat_screen.dart';
+import 'package:tawseel/Views/User/Home/product_screen.dart';
+import 'package:tawseel/Views/User/Home/root_screen.dart';
+import 'package:tawseel/Views/User/Home/stores_screen.dart';
 import '../Services/middleware.dart';
-import '../Views/Auth/intro_screen.dart';
-import '../Views/Auth/splash_screen.dart.dart';
+import '../Views/User/Auth/intro_screen.dart';
+import '../Views/User/Auth/splash_screen.dart.dart';
 
 /// Routes name to directly navigate the route by its name
 class Routes {

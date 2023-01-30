@@ -4,11 +4,11 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:tawseel/Globals/globals.dart';
 import 'package:tawseel/Util/theme.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Util/size_config.dart';
-import '../../Widgets/inputField.dart';
-import '../../Widgets/intro.dart';
-import '../../Widgets/profile_item.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Util/size_config.dart';
+import '../../../Widgets/inputField.dart';
+import '../../../Widgets/intro.dart';
+import '../../../Widgets/profile_item.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);

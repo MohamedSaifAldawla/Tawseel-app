@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tawseel/Views/Home/root_screen.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Globals/globals.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
-import '../../Widgets/store_item.dart';
+import 'package:tawseel/Views/User/Home/root_screen.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Globals/globals.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
+import '../../../Widgets/store_item.dart';
 
 class StoresScreen extends StatelessWidget {
   const StoresScreen({Key? key}) : super(key: key);

@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:restart_app/restart_app.dart';
 
-import '../../Animations/FadeAnimation.dart';
-import '../../Widgets/intro.dart';
-import '../../Widgets/primary_button.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Widgets/intro.dart';
+import '../../../Widgets/primary_button.dart';
 
 class ConnectionScreen extends StatelessWidget {
   const ConnectionScreen({Key? key}) : super(key: key);

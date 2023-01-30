@@ -3,11 +3,11 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../Globals/globals.dart';
-import '../../Util/routes.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
-import '../../Widgets/intro.dart';
+import '../../../Globals/globals.dart';
+import '../../../Util/routes.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
+import '../../../Widgets/intro.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

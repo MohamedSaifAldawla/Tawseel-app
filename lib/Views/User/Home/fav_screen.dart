@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tawseel/Models/cat.dart';
-import 'package:tawseel/Util/size_config.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Globals/globals.dart';
-import '../../Models/cart.dart';
-import '../../Widgets/product_item.dart';
+
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Globals/globals.dart';
+import '../../../Models/cart.dart';
+import '../../../Util/size_config.dart';
+import '../../../Widgets/product_item.dart';
 import 'product_screen.dart';
 
-class CatScreen extends StatelessWidget {
-  const CatScreen({super.key, required this.cat});
-
-  final Categories cat;
+class FavScreen extends StatelessWidget {
+  const FavScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("${cat.title}"),
+        title: Text("Fav".tr),
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
@@ -33,7 +31,7 @@ class CatScreen extends StatelessWidget {
                   horizontal: getProportionateScreenWidth(15),
                 ),
                 shrinkWrap: true,
-                itemCount: productController.product.length,
+                itemCount: productController.favProduct.length,
                 physics: const BouncingScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
@@ -49,32 +47,35 @@ class CatScreen extends StatelessWidget {
                         productController.counter.value = 1;
                         Get.to(
                             () => ProductScreen(
-                                  product: productController.product[index],
+                                  product: productController.favProduct[index],
                                 ),
                             transition: Transition.fadeIn);
                       },
                       child: ProductItem(
-                          id: productController.product[index].id!,
-                          name: "${productController.product[index].name}",
-                          contColor: productController.product[index].color!,
-                          price: productController.product[index].price!,
-                          img: "${productController.product[index].image}",
-                          isFav: productController.product[index].isFav!,
-                          weight: "${productController.product[index].weight}",
+                          id: productController.favProduct[index].id!,
+                          name: "${productController.favProduct[index].name}",
+                          contColor: productController.favProduct[index].color!,
+                          price: productController.favProduct[index].price!,
+                          img: "${productController.favProduct[index].image}",
+                          isFav: productController.favProduct[index].isFav!,
+                          weight:
+                              "${productController.favProduct[index].weight}",
                           favTap: (() {}),
                           onTap: (() {
                             productController.addToCart(
                               Cart(
-                                id: productController.product[index].id,
+                                id: productController.favProduct[index].id,
                                 name:
-                                    "${productController.product[index].name}",
+                                    "${productController.favProduct[index].name}",
                                 image:
-                                    "${productController.product[index].image}",
-                                price: productController.product[index].price,
+                                    "${productController.favProduct[index].image}",
+                                price:
+                                    productController.favProduct[index].price,
                                 weight:
-                                    "${productController.product[index].weight}",
+                                    "${productController.favProduct[index].weight}",
                                 quantity: 1,
-                                color: productController.product[index].color,
+                                color:
+                                    productController.favProduct[index].color,
                               ),
                             );
                           })),

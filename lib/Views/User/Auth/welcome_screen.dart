@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:tawseel/Views/Auth/register_screen.dart';
+import 'package:tawseel/Views/User/Auth/register_screen.dart';
 import 'package:tawseel/Widgets/primary_button.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Globals/globals.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
-import '../../Widgets/intro.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Globals/globals.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
+import '../../../Widgets/intro.dart';
 import 'login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {

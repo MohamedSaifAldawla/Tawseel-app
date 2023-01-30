@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Globals/globals.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
-import '../../Widgets/intro.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Globals/globals.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
+import '../../../Widgets/intro.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({Key? key}) : super(key: key);

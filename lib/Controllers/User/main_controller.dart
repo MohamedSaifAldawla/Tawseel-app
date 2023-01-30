@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:tawseel/Controllers/cart_controller.dart';
-import 'package:tawseel/Controllers/cat_controller.dart';
-import 'package:tawseel/Controllers/product_controller.dart';
-import 'package:tawseel/Controllers/store_controller.dart';
-import 'package:tawseel/Views/Home/cart_screen.dart';
-import 'package:tawseel/Views/Home/fav_screen.dart';
-import 'package:tawseel/Views/Home/home_screen.dart';
-import 'package:tawseel/Views/Home/orders_screen.dart';
-import 'package:tawseel/Views/Home/profile_screen.dart';
+import 'package:tawseel/Views/User/Home/cart_screen.dart';
+import 'package:tawseel/Views/User/Home/fav_screen.dart';
+import 'package:tawseel/Views/User/Home/home_screen.dart';
+import 'package:tawseel/Views/User/Home/orders_screen.dart';
+import 'package:tawseel/Views/User/Home/profile_screen.dart';
 
-import '../Globals/globals.dart';
+import '../../Globals/globals.dart';
+import 'cart_controller.dart';
+import 'cat_controller.dart';
+import 'product_controller.dart';
+import 'store_controller.dart';
 
 class MainController extends GetxController {
   CatController catController = Get.put(CatController());

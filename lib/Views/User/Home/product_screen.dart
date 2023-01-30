@@ -6,11 +6,11 @@ import 'package:tawseel/Models/cart.dart';
 import 'package:tawseel/Models/product.dart';
 import 'package:tawseel/Util/size_config.dart';
 import 'package:tawseel/Util/theme.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Widgets/fav_item.dart';
-import '../../Widgets/intro.dart';
-import '../../Widgets/primary_button.dart';
-import '../../Widgets/quantity_item.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Widgets/fav_item.dart';
+import '../../../Widgets/intro.dart';
+import '../../../Widgets/primary_button.dart';
+import '../../../Widgets/quantity_item.dart';
 
 class ProductScreen extends StatelessWidget {
   const ProductScreen({Key? key, required this.product}) : super(key: key);

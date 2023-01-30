@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import '../../../Widgets/intro.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Util/routes.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
+import '../../../../Widgets/intro.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Util/routes.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);

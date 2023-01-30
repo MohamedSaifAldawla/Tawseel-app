@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import '../../../Widgets/intro.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Controllers/main_controller.dart';
-import '../../Globals/globals.dart';
-import '../../Util/routes.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
-import '../../Widgets/image_button.dart';
+import '../../../../Widgets/intro.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Controllers/User/main_controller.dart';
+import '../../../Globals/globals.dart';
+import '../../../Util/routes.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
+import '../../../Widgets/image_button.dart';
 
 class IntroScreen extends GetView<MainController> {
   const IntroScreen({Key? key}) : super(key: key);

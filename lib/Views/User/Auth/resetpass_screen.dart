@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:tawseel/Views/Auth/otp_screen.dart';
+import 'package:tawseel/Views/User/Auth/otp_screen.dart';
 import 'package:tawseel/Widgets/primary_button.dart';
-import '../../Animations/FadeAnimation.dart';
-import '../../Globals/globals.dart';
-import '../../Util/size_config.dart';
-import '../../Util/theme.dart';
-import '../../Widgets/form_error.dart';
-import '../../Widgets/inputField.dart';
-import '../../Widgets/intro.dart';
+import '../../../Animations/FadeAnimation.dart';
+import '../../../Globals/globals.dart';
+import '../../../Util/size_config.dart';
+import '../../../Util/theme.dart';
+import '../../../Widgets/form_error.dart';
+import '../../../Widgets/inputField.dart';
+import '../../../Widgets/intro.dart';
 
 // ignore: must_be_immutable
 class ResetPassScreen extends StatefulWidget {

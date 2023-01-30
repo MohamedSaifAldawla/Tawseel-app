@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import 'package:tawseel/Globals/globals.dart';
 import 'package:tawseel/Models/product.dart';
 
-import '../Models/cart.dart';
-import '../Util/theme.dart';
+import '../../Models/cart.dart';
+import '../../Util/theme.dart';
 
 class ProductController extends GetxController {
   List<Product> favProduct = [];

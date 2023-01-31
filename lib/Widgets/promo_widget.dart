@@ -102,6 +102,10 @@ class Promo extends StatelessWidget {
                         child: BodyText(
                           text: "Order now".tr,
                           fontSize: getProportionateScreenWidth(10),
+                          color:
+                              Theme.of(context).brightness == Brightness.light
+                                  ? kTextColor
+                                  : kPrimaryDark3Color,
                         ),
                       ),
                     ),

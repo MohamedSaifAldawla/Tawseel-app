@@ -195,7 +195,9 @@ class CartProductItem extends StatelessWidget {
         width: double.infinity,
         height: getProportionateScreenWidth(90),
         decoration: BoxDecoration(
-          color: kPrimaryLightColor,
+          color: Theme.of(context).brightness == Brightness.light
+              ? kPrimaryLightColor
+              : kPrimaryDark3Color,
           borderRadius: BorderRadius.circular(
             getProportionateScreenWidth(25),
           ),

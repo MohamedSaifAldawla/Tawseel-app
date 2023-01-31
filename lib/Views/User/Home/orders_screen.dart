@@ -49,7 +49,9 @@ class OrderItem extends StatelessWidget {
         width: double.infinity,
         height: getProportionateScreenWidth(90),
         decoration: BoxDecoration(
-          color: kPrimaryLightColor,
+          color: Theme.of(context).brightness == Brightness.light
+              ? kPrimaryLightColor
+              : kPrimaryDark3Color,
           borderRadius: BorderRadius.circular(
             getProportionateScreenWidth(20),
           ),
@@ -117,7 +119,7 @@ class OrderItem extends StatelessWidget {
             Gap(getProportionateScreenWidth(10)),
             SvgPicture.asset(
               "assets/icons/Line2.svg",
-              color: error,
+              color: Colors.grey,
               height: getProportionateScreenWidth(40),
             ),
             Gap(getProportionateScreenWidth(10)),

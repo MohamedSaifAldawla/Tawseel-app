@@ -29,7 +29,9 @@ class CatItem extends StatelessWidget {
           Container(
             width: getProportionateScreenWidth(55),
             decoration: BoxDecoration(
-              color: const Color(0xffF3F3F3),
+              color: Theme.of(context).brightness == Brightness.light
+                  ? const Color(0xffF3F3F3)
+                  : kPrimaryDark3Color,
               borderRadius: BorderRadius.circular(
                 getProportionateScreenWidth(20),
               ),

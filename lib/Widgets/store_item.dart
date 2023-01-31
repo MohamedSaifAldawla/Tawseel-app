@@ -18,7 +18,9 @@ class StoreItem extends StatelessWidget {
       width: getProportionateScreenWidth(170),
       height: getProportionateScreenWidth(190),
       decoration: BoxDecoration(
-        color: kPrimaryLightColor,
+        color: Theme.of(context).brightness == Brightness.light
+            ? kPrimaryLightColor
+            : kPrimaryDark3Color,
         borderRadius: BorderRadius.circular(
           getProportionateScreenWidth(20),
         ),
@@ -45,7 +47,9 @@ class StoreItem extends StatelessWidget {
               width: getProportionateScreenWidth(110),
               height: getProportionateScreenWidth(110),
               decoration: BoxDecoration(
-                color: kContainerColor,
+                color: Theme.of(context).brightness == Brightness.light
+                    ? kContainerColor
+                    : kPrimaryDarkColor,
                 borderRadius: BorderRadius.circular(
                   getProportionateScreenWidth(55),
                 ),

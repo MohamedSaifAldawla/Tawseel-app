@@ -34,7 +34,9 @@ class ProductItem extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       width: getProportionateScreenWidth(100),
       decoration: BoxDecoration(
-        color: kContainerColor,
+        color: Theme.of(context).brightness == Brightness.light
+            ? kContainerColor
+            : kPrimaryDark3Color,
         borderRadius: BorderRadius.circular(
           getProportionateScreenWidth(15),
         ),
@@ -137,7 +139,9 @@ class ProductItem extends StatelessWidget {
                       width: getProportionateScreenWidth(25),
                       height: getProportionateScreenWidth(25),
                       decoration: BoxDecoration(
-                        color: const Color(0xffe6e6e6),
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? const Color(0xffe6e6e6)
+                            : kPrimaryDark2Color,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(
                             getProportionateScreenWidth(5),
@@ -161,7 +165,9 @@ class ProductItem extends StatelessWidget {
                       width: getProportionateScreenWidth(25),
                       height: getProportionateScreenWidth(25),
                       decoration: BoxDecoration(
-                        color: const Color(0xffe6e6e6),
+                        color: Theme.of(context).brightness == Brightness.light
+                            ? const Color(0xffe6e6e6)
+                            : kPrimaryDark2Color,
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(
                             getProportionateScreenWidth(5),

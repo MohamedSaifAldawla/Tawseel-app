@@ -21,6 +21,7 @@ class MainController extends GetxController {
 
   Locale? language;
   var currentIndex = 0.obs;
+  bool darkMode = false;
   List<Widget> screens = [
     const HomeScreen(),
     const OrdersScreen(),
@@ -28,6 +29,9 @@ class MainController extends GetxController {
     const FavScreen(),
     const ProfileScreen(),
   ];
+
+  //--------------------- Change Lang --------------------------//
+
   changeLang(String code) async {
     Locale locale = Locale(code);
     GetStorage().write("lang", code);
@@ -35,10 +39,29 @@ class MainController extends GetxController {
     init();
   }
 
+  //--------------------- Change Theme --------------------------//
+  void changeTheme(value) {
+    if (value == true) {
+      darkMode = true;
+      Get.changeThemeMode(ThemeMode.dark);
+      GetStorage().write("isDark", true);
+    } else if (value == false) {
+      darkMode = false;
+      Get.changeThemeMode(ThemeMode.light);
+      GetStorage().write("isDark", false);
+    }
+  }
+
   @override
   void onInit() async {
     debugPrint(lang);
     debugPrint("isDark:$isDark");
+    if (isDark == true) {
+      darkMode = true;
+    }
+    if (isDark == false || isDark == null) {
+      darkMode = false;
+    }
     if (lang == "ar") {
       language = const Locale("ar");
     } else if (lang == "en") {

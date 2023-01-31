@@ -8,7 +8,9 @@ import '../../../Animations/FadeAnimation.dart';
 import '../../../Util/size_config.dart';
 import '../../../Widgets/inputField.dart';
 import '../../../Widgets/intro.dart';
+import '../../../Widgets/lang_dialog.dart';
 import '../../../Widgets/profile_item.dart';
+import '../../../Widgets/theme_dialog.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -114,7 +116,7 @@ class ProfileScreen extends StatelessWidget {
                       ProfileItem(
                         firstIcon: "assets/icons/lang.svg",
                         title: "Language".tr,
-                        onTap: (() => langThemeDialog(
+                        onTap: (() => langDialog(
                               context: context,
                               onTap1: () {
                                 mainController.changeLang("en");
@@ -132,6 +134,17 @@ class ProfileScreen extends StatelessWidget {
                       ProfileItem(
                         firstIcon: "assets/icons/night.svg",
                         title: "Night mode".tr,
+                        onTap: (() => themeDialog(
+                              context: context,
+                              onTap1: () {
+                                mainController.changeTheme(true);
+                                Get.back();
+                              },
+                              onTap2: () {
+                                mainController.changeTheme(false);
+                                Get.back();
+                              },
+                            )),
                       ),
                     ),
                     FadeAnimation(
@@ -166,139 +179,6 @@ class ProfileScreen extends StatelessWidget {
                     Gap(getProportionateScreenWidth(100)),
                   ],
                 ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  langThemeDialog(
-      {required context,
-      required Function()? onTap1,
-      required Function()? onTap2}) {
-    return Get.dialog(
-      Dialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(getProportionateScreenWidth(15)),
-        ),
-        child: Container(
-          padding: EdgeInsets.only(
-              left: getProportionateScreenWidth(5),
-              right: getProportionateScreenWidth(5),
-              bottom: getProportionateScreenWidth(10)),
-          width: double.infinity,
-          height: getProportionateScreenWidth(180),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: SvgPicture.asset(
-                      "assets/icons/Close2.svg",
-                      color: error,
-                      width: 20,
-                      height: 20,
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  GestureDetector(
-                    onTap: onTap1,
-                    child: Container(
-                      width: getProportionateScreenWidth(100),
-                      height: getProportionateScreenWidth(100),
-                      decoration: BoxDecoration(
-                        color: kPrimaryLightColor,
-                        borderRadius: BorderRadius.circular(
-                          getProportionateScreenWidth(20),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color:
-                                Theme.of(context).brightness == Brightness.light
-                                    ? shadow
-                                    : shadow2,
-                            blurRadius: 20.0,
-                            offset: const Offset(0, 8),
-                            blurStyle: BlurStyle.normal,
-                          )
-                        ],
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/images/english.png",
-                            height: getProportionateScreenHeight(60),
-                            width: getProportionateScreenWidth(60),
-                          ),
-                          Gap(getProportionateScreenWidth(10)),
-                          BodyText(
-                            text: "English".toUpperCase(),
-                            weight: FontWeight.bold,
-                            color:
-                                Theme.of(context).brightness == Brightness.light
-                                    ? kTextColor
-                                    : kPrimaryLightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Gap(getProportionateScreenWidth(40)),
-                  GestureDetector(
-                    onTap: onTap2,
-                    child: Container(
-                      width: getProportionateScreenWidth(100),
-                      height: getProportionateScreenWidth(100),
-                      decoration: BoxDecoration(
-                        color: kPrimaryLightColor,
-                        borderRadius: BorderRadius.circular(
-                          getProportionateScreenWidth(20),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color:
-                                Theme.of(context).brightness == Brightness.light
-                                    ? shadow
-                                    : shadow2,
-                            blurRadius: 20.0,
-                            offset: const Offset(0, 8),
-                            blurStyle: BlurStyle.normal,
-                          )
-                        ],
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/images/saudi.png",
-                            height: getProportionateScreenHeight(60),
-                            width: getProportionateScreenWidth(60),
-                          ),
-                          Gap(getProportionateScreenWidth(10)),
-                          BodyText(
-                            text: "العربيه".toUpperCase(),
-                            weight: FontWeight.bold,
-                            color:
-                                Theme.of(context).brightness == Brightness.light
-                                    ? kTextColor
-                                    : kPrimaryLightColor,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),

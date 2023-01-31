@@ -197,21 +197,11 @@ class ProductController extends GetxController {
   }
 
   void addToCart(Cart cartItem) {
-    int index =
+    debugPrint("${cartItem.id}");
+    var index =
         cartController.cart.indexWhere((element) => element.id == cartItem.id);
-    if (index == 0) {
-      mainController.SnackBar(
-        "Error".tr,
-        "Item already in cart".tr,
-        SvgPicture.asset(
-          "assets/icons/Close2.svg",
-          color: Colors.white,
-        ),
-        error,
-        SnackPosition.TOP,
-        2,
-      );
-    } else {
+    debugPrint("$index");
+    if (index == -1) {
       cartController.cart.add(cartItem);
       debugPrint("${cartController.cart}");
       mainController.SnackBar(
@@ -226,6 +216,18 @@ class ProductController extends GetxController {
         2,
       );
       cartController.totalPrice(item: cartItem);
+    } else if (cartController.cart[index].id == cartItem.id) {
+      mainController.SnackBar(
+        "Error".tr,
+        "Item already in cart".tr,
+        SvgPicture.asset(
+          "assets/icons/Close2.svg",
+          color: Colors.white,
+        ),
+        error,
+        SnackPosition.TOP,
+        2,
+      );
     }
   }
 

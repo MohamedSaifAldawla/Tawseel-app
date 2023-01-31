@@ -66,6 +66,9 @@ class InputField extends StatelessWidget {
           labelText: label,
           labelStyle: TextStyle(
             fontSize: getProportionateScreenWidth(17),
+            color: Theme.of(context).brightness == Brightness.light
+                ? kText2Color
+                : kPrimaryLightColor,
           ),
           hintText: hint,
           prefixIcon: Padding(
@@ -85,7 +88,9 @@ class InputField extends StatelessWidget {
             child: SvgPicture.asset(
               icon,
               height: height ?? getProportionateScreenWidth(30),
-              color: kInputIconColor,
+              color: Theme.of(context).brightness == Brightness.light
+                  ? kInputIconColor
+                  : kPrimaryLightColor,
             ),
           ),
         ),
@@ -158,6 +163,9 @@ class SuffixInputField extends StatelessWidget {
           labelText: label,
           labelStyle: TextStyle(
             fontSize: getProportionateScreenWidth(17),
+            color: Theme.of(context).brightness == Brightness.light
+                ? kText2Color
+                : kPrimaryLightColor,
           ),
           hintText: hint,
           prefixIcon: Padding(
@@ -177,7 +185,9 @@ class SuffixInputField extends StatelessWidget {
             child: SvgPicture.asset(
               icon,
               height: height ?? getProportionateScreenWidth(30),
-              color: kInputIconColor,
+              color: Theme.of(context).brightness == Brightness.light
+                  ? kInputIconColor
+                  : kPrimaryLightColor,
             ),
           ),
           suffixIcon: GestureDetector(
@@ -199,7 +209,9 @@ class SuffixInputField extends StatelessWidget {
               child: SvgPicture.asset(
                 suffixIcon,
                 height: height ?? getProportionateScreenWidth(30),
-                color: kInputIconColor,
+                color: Theme.of(context).brightness == Brightness.light
+                    ? kInputIconColor
+                    : kPrimaryLightColor,
               ),
             ),
           ),

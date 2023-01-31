@@ -40,7 +40,10 @@ class _SplashScreenState extends State<SplashScreen> {
       body: SingleChildScrollView(
         child: Container(
           width: double.infinity,
-          decoration: const BoxDecoration(color: kPrimaryLightColor),
+          decoration: BoxDecoration(
+              color: Theme.of(context).brightness == Brightness.light
+                  ? kPrimaryLightColor
+                  : kPrimaryDarkColor),
           child: Padding(
             padding: const EdgeInsets.only(top: 100),
             child: Column(

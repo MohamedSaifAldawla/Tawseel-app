@@ -51,6 +51,7 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Gap(getProportionateScreenWidth(15)),
                     FadeAnimation(
                       1.2,
                       BodyText(

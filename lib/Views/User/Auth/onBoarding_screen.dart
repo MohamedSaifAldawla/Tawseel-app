@@ -220,8 +220,8 @@ class OnboardingPage extends StatelessWidget {
               1.3,
               Image.asset(
                 img,
-                height: getProportionateScreenHeight(200),
-                width: getProportionateScreenWidth(200),
+                height: getProportionateScreenHeight(250),
+                width: getProportionateScreenWidth(150),
               ),
             ),
             FadeAnimation(

@@ -53,7 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   tag: "image",
                   child: Image.asset(
                     logo,
-                    height: getProportionateScreenHeight(200),
+                    height: getProportionateScreenHeight(190),
                     width: getProportionateScreenWidth(220),
                   ),
                 ),

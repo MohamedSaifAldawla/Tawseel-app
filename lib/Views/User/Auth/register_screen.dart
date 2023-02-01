@@ -65,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         // title: Text("Login".tr),
-        backgroundColor: kPrimary3Color,
+        backgroundColor: Colors.transparent,
       ),
       body: Stack(
         children: [
